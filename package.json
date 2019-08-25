@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/DanyalCheema/welcome/issues"
   },
-  "homepage": "https://github.com/DanyalCheema/welcome#readme"
+  "homepage": "https://github.com/DanyalCheema/welcome#readme",
+  "dependencies": {
+    "http": "0.0.0"
+  }
 }
