@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "project03",
   "version": "0.0.0",
   "scripts": {
@@ -48,5 +49,29 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.7.5"
+=======
+  "name": "newproject",
+  "version": "1.0.0",
+  "description": "work on node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanyalCheema/welcome.git"
+  },
+  "keywords": [
+    "app"
+  ],
+  "author": "Danyal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanyalCheema/welcome/issues"
+  },
+  "homepage": "https://github.com/DanyalCheema/welcome#readme",
+  "dependencies": {
+    "http": "0.0.0"
+>>>>>>> 4a5a6c8d015c58a7e9a9198b3b23e15def600e11
   }
 }
