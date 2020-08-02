@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Please confirm your location</h1>
+<agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+  <agm-marker [latitude]="latitude" [longitude]="longitude" >
+  </agm-marker>
+  <agm-marker 
+      *ngFor="let salepoint of salepoints"
+      [latitude]="salepoint.address.latitude"
+      [longitude]="salepoint.address.longitude">
+</agm-marker>
+</agm-map>
+<div mat-dialog-content>
+</div>
+<mat-dialog-actions align="start">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Confirm</button>
+</mat-dialog-actions>

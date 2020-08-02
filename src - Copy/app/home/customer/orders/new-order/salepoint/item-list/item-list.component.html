@@ -1,0 +1,26 @@
+<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let orderItem of orderItems; let i = index">
+        <mat-card class="mat-elevation-z4">
+            <img mat-card-image src="/assets/img/vf.jpg" alt="Product Photo">
+                <mat-card-title>{{orderItem.item.name | titlecase}}</mat-card-title>
+                <!-- <mat-divider></mat-divider> -->
+            <mat-card-content>Rs {{ orderItem.item.itemPrice }} / {{orderItem.item.unit | titlecase}}</mat-card-content>            <mat-card-footer>
+                <div *ngIf="!orderItem.getQuantity(); else updateQuantity">
+                    <button mat-raised-button class="full-width" color="primary" (click)="addToCart(i)">Add to
+                        Cart</button>
+                </div>
+                <ng-template #updateQuantity>
+                    <div fxLayout="row wrap">
+                        <button mat-raised-button fxFlex="17" class="quantity-btn" color="primary" (click)="orderItem.quantityDec(); updateOrder(orderItem); removeItem(orderItem,i)">
+                            <mat-icon>remove</mat-icon>
+                        </button>
+                        <span class="span-border" fxFlex="auto" fxLayoutAlign="center center"><b>{{ orderItem.getQuantity() }}</b> &nbsp;  {{ orderItem.item.unit}}</span>
+                        <button mat-raised-button fxFlex="17" class="quantity-btn" color="primary" (click)="orderItem.quantityInc(); updateOrder(orderItem)">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
+                </ng-template>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+</div>

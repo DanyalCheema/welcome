@@ -1,0 +1,13 @@
+.mat-card-footer > button, .mat-card-footer div {
+  width: 100%;
+  height: 45px;
+}
+
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+  margin-bottom: 16px;
+}
+/*# sourceMappingURL=item-list.component.css.map */

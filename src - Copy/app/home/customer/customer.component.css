@@ -1,0 +1,26 @@
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40%;
+  background-color: lavender;
+}
+
+.flex-container > div {
+  text-align: center;
+  font-size: 100%;
+  color: black;
+  width: 70%;
+  height: 90%;
+}
+/*# sourceMappingURL=customer.component.css.map */

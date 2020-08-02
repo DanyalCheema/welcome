@@ -1,0 +1,30 @@
+<mat-toolbar>
+    <mat-toolbar-row>
+        <button mat-icon-button (click)="backClicked()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxLayoutGap="20px">
+            <ul fxLayout="row" fxLayoutGap="15px">
+                <ng-container *ngIf="!isRider">
+                    <li *ngIf="isLoggedIn">
+                        <button mat-icon-button (click)="clickCart()">
+                            <mat-icon>shopping_cart</mat-icon>
+                            <span class="badge bg-red-500"
+                                >{{counter}}</span>
+                        </button>
+                    </li>
+                    <li *ngIf="isLoggedIn">
+                        <button mat-button routerLink="/customer/{{customerId}}/orders">
+                            <mat-icon>exit_to_app</mat-icon>
+                            <p>Orders</p>
+                        </button>
+                    </li>
+                </ng-container>
+                <li *ngIf="isLoggedIn">
+                    <app-user></app-user>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

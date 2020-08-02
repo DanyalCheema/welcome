@@ -1,0 +1,26 @@
+.order-card {
+  margin: 20px;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.mat-badge-medium.mat-badge-above .mat-badge-content {
+  top: -3px;
+}
+
+.stretch-badge > .mat-badge-content {
+  background-color: #fbfbfb !important;
+  border: 0.10px solid lightgray;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px !important;
+  font-weight: 500;
+  border-radius: 0px;
+}
+
+.stretch-badge {
+  margin-right: 2em;
+}
+/*# sourceMappingURL=order-list.component.css.map */

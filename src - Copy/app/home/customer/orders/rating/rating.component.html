@@ -1,0 +1,13 @@
+<div fxLayout="column"  fxLayoutAlign="center center">
+
+    <div>
+        <div class="list-inline rating-list" *ngFor="let star of stars" style="display: inline-block">
+            <li (click)="countStar(star)" [ngClass]="{'selected': (star <= selectedValue), 'disabled-icon': (order.rating!=0)}">
+                <mat-icon>star_outline</mat-icon>
+            </li>
+        </div>
+    </div>
+    <div>
+        <button mat-stroked-button color="accent" (click)="sendFeedback()" *ngIf="order.rating==0">Send Feedback</button>
+    </div>
+</div>

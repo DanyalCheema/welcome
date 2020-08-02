@@ -1,0 +1,30 @@
+<p>
+    <button mat-raised-button color="primary" routerLink="/customer/{{customerId}}/salepoint/{{salepointId}}" (click)="addOrder()"
+        routerLinkActive="router-link-active">New
+        Order</button>
+</p>
+<ng-container *ngFor="let order of orders$|async">
+    <mat-card class="mat-elevation-z8 order-card">
+        <mat-card-header>
+            <mat-card-title>{{order.id}} -{{order.placedAt | date: 'MMM d, h:mm a'}}</mat-card-title>
+            <mat-card-subtitle>{{order.orderItems.length}} items of
+                {{ order.orderAmount | currency:'PKR ':'symbol':'2.2' }}</mat-card-subtitle>
+            <div fxFlex><button class="status" disabled>{{order.status}}</button></div>
+
+            <div fxFlex fxLayoutAlign="end start"><button mat-icon-button color="primary" (click)="editOrder(order)"><mat-icon>edit</mat-icon></button></div>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <br />
+            <div fxLayout="row wrap" fxLayoutAlign="flex-start" *ngFor="let item of order.orderItems">
+                <p fxFlex="50">{{item.item.name | titlecase}}</p>
+                <p fxFlex><span [matBadge]="item.quantity" matBadgeOverlap="false" class="stretch-badge"></span>
+                    {{item.item.unit}}</p>
+            </div>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-actions >
+            <app-rating [order-detail]="order"></app-rating>
+        </mat-card-actions>
+    </mat-card>
+</ng-container>

@@ -1,0 +1,29 @@
+<div class="searchBox" fxLayout="column">
+  <h1>We care about you health</h1>
+  <p class="serachPara">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Perspiciatis quibusdam aspernatur veritatis fugiat maxime, 
+    quia sint officiis obcaecati doloribus consequuntur saepe! 
+    Alias, esse libero. Sequi id nam neque veniam natus!
+  </p>
+  <div fxFlex fxLayout="row" fxLayoutAlign="center center" >
+    <mat-form-field appearance="outline" fxFlex="90%" fxFlex.gt-sm="60%">
+      <mat-label>Search Sale Point</mat-label>
+      <input matInput #inputAddress placeholder="Enter Address" autocorrect="off" autocapitalize="off" spellcheck="off" required [value]="address">
+      <mat-icon matSuffix class="defaultpointer" (click)="onClick()" >search</mat-icon>
+    </mat-form-field>
+  </div>
+</div>
+<div class="add"> 
+  <div fxFlex fxLayout="row" fxLayoutAlign="end end" style="margin: 1%; ">
+    <mat-card style="max-width: 400px" >
+      <mat-card-content>
+        <p>
+          Instead of the only customer, our platform also connects owners to the community to find employees for their store so if you are in searching for a job you are just one
+           click away now. Check job details , select a suitable one, and contact them to join.
+        </p>
+      </mat-card-content>
+      <button  mat-stroked-button color="primary" [routerLink]="['jobAdd']" routerLinkActive="router-link-active">Find a job</button>
+    </mat-card>
+  </div>
+</div>

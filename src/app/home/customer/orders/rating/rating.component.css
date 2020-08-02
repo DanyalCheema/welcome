@@ -1,0 +1,26 @@
+.rating-list li {
+  float: right;
+  color: #ddd;
+  padding: 0px 5px;
+}
+
+.rating-list li:hover,
+.rating-list li:hover ~ li, .rating-list li.selected {
+  color: #ffd700;
+}
+
+.rating-list {
+  display: inline-block;
+  list-style: none;
+}
+
+.material-icons {
+  font-size: 30px !important;
+}
+
+.mat-stroked-button {
+  border: 1px solid currentColor;
+  line-height: 40px;
+  background: #FFF7FA;
+}
+/*# sourceMappingURL=rating.component.css.map */

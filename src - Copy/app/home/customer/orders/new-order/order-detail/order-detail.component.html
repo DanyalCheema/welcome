@@ -1,0 +1,45 @@
+<div fxFlex fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="mat-elevation-z4" fxFlex="95%" fxFlex.gt-sm="50%">
+    <mat-card-header>
+      <mat-card-title>Your Order to {{salepointName | titlecase}}</mat-card-title>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-list>
+      <mat-list-item *ngFor="let orderItem of order.orderItems; let i = index">
+        <div matLine fxLayoutAlign="space-between center">
+          <h3> {{orderItem.item.name | titlecase}}</h3>
+          <span>{{ orderItem.item.itemPrice * orderItem.getQuantity() | currency:'PKR ':'symbol':'2.2' }}</span>
+        </div>
+        <div matLine fxLayoutAlign="space-between center">
+          <p> {{orderItem.item.remarks}}remarks</p>
+          <span class="interaction" fxLayoutAlign="space-between center">
+            <button mat-icon-button *ngIf="orderItem.getQuantity() <= 0.5; else itemDec" color="primary"
+              (click)="order.removeItem(orderItem.item.id); updateOrder()">
+              <mat-icon>delete</mat-icon>
+            </button>
+            <ng-template #itemDec>
+              <button mat-icon-button color="primary" (click)="orderItem.quantityDec(); order.orderAmountUpdate()">
+                <mat-icon>remove</mat-icon>
+              </button>
+            </ng-template>
+            <span class="quantity">{{orderItem.getQuantity() }}</span> <span class="unit">
+              {{orderItem.item.unit}}</span>
+            <button mat-icon-button color="primary" (click)="orderItem.quantityInc(); order.orderAmountUpdate()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </span>
+        </div>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <div matLine class="total" fxLayoutAlign="space-between center">
+          <p>Total</p>
+          <p>{{order.getAmount() | currency:'PKR ':'symbol':'2.2' }}</p>
+        </div>
+      </mat-list-item>
+    </mat-list>
+    <mat-card-footer fxLayoutAlign="center" class="mat-elevation-z4">
+      <button fxFlex="100%" mat-raised-button color="primary" (click)="checkout()">CHECKOUT</button>
+    </mat-card-footer>
+  </mat-card>
+</div>

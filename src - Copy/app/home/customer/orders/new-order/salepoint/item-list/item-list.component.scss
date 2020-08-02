@@ -1,0 +1,26 @@
+@import '../../../../../../../fsp-app-theme.scss';
+.mat-card, button {
+    border-radius: 0px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.content {
+    padding: 16px;
+    > .mat-card {
+        margin-bottom: 16px;
+    }
+}
+
+.mat-card-footer {
+    padding: 5px 5px;
+    .quantity-btn{
+        padding: 0px 0px !important;
+        min-width: unset!important;
+    }
+    .span-border {
+        border: 1px solid mat-color($app-primary);
+    }
+}

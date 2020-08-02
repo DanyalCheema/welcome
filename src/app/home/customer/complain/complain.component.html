@@ -1,0 +1,26 @@
+<mat-card class="complain-card">
+  <mat-card-header>
+    <mat-card-title>Complain</mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="complainForm" (ngSubmit)="submitComplain()" novalidate>
+    
+    <mat-form-field appearance="outline" >
+      <mat-label>Complain Subject</mat-label>
+      <mat-select matInput  fromControl="subject" [(value)]="selected" >
+        <mat-option  *ngFor="let sub of subjects" [(value)]="sub.value" >
+          {{sub.viewValue}} 
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br>
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Complain Description</mat-label>
+      <textarea matInput formControlName="description" [(value)]="description"></textarea>
+    </mat-form-field>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!complainForm.valid" >Add</button>
+      <!-- <button mat-raised-button color="primary" type="submit">Add</button> -->
+    </mat-card-actions>
+  </form>
+</mat-card>

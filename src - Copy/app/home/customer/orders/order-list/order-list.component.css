@@ -1,0 +1,29 @@
+.order-card {
+  margin: 20px;
+}
+
+.mat-badge-medium.mat-badge-above .mat-badge-content {
+  top: -3px;
+}
+
+.stretch-badge > .mat-badge-content {
+  background-color: #fbfbfb !important;
+  border: 0.10px solid lightgray;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px !important;
+  font-weight: 500;
+  border-radius: 0px;
+}
+
+.stretch-badge {
+  margin-right: 2em;
+}
+
+.status {
+  background-color: green;
+  border: 0px;
+  padding: 3px 8px;
+  color: white;
+  font-size: 12px;
+}
+/*# sourceMappingURL=order-list.component.css.map */

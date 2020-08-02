@@ -1,0 +1,9 @@
+<h1 class="centre" style="font-family:'fantasy';">{{job.title}}</h1>
+<h3 class="centre">Sale Point Nmae : {{job.salePoint.name}}</h3>
+<h3 class="centre">Salary : {{job.salary}} </h3>
+<h3 class="centre">Sale point city : {{job.salePoint.address.city}}</h3>
+<h3 class="centre" *ngIf = "job.experience" >Experience : {{job.experience}} years </h3>
+<h3 class="centre">Description : {{job.description}} </h3>
+<mat-dialog-actions align="start">
+    <button mat-button mat-dialog-close><mat-icon >close</mat-icon></button>
+  </mat-dialog-actions>

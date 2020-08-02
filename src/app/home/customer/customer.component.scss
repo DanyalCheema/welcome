@@ -1,0 +1,17 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 40%;
+    background-color: lavender;
+}
+
+.flex-container > div {
+    // background-color: skyblue;
+    text-align: center;
+    font-size: 100%;
+    color: black;
+    width: 70%;
+    height: 90%;
+}

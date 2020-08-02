@@ -1,0 +1,11 @@
+<div class="flex-container">
+    <mat-card *ngFor="let salepoint of salepoints" class="card mat-elevation-z8" (click)="salepointHome(salepoint)">
+        <img mat-card-image src="/assets/img/loginbackground.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-title> {{salepoint.name | titlecase}} </mat-card-title>
+        <mat-card-content>{{salepoint.description}}</mat-card-content>
+    </mat-card>
+
+</div>
+
+<!-- <mat-paginator [length]="list.length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]" (page)="onPageChange($event)">
+</mat-paginator> -->

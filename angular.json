@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "welcome": {
+    "customer-employee-app": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,22 +17,31 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/welcome",
+            "outputPath": "dist/customer-employee-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "src/fsp-app-theme.scss"
             ],
             "scripts": []
           },
           "configurations": {
+            "hmr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.hmr.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -41,7 +54,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -63,18 +75,22 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "welcome:build"
+            "browserTarget": "customer-employee-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "welcome:build:production"
+              "browserTarget": "customer-employee-app:build:production"
+            },
+            "hmr": {
+              "hmr": true,
+              "browserTarget": "customer-employee-app:build:hmr"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "welcome:build"
+            "browserTarget": "customer-employee-app:build"
           }
         },
         "test": {
@@ -89,7 +105,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "src/fsp-app-theme.scss"
             ],
             "scripts": []
           }
@@ -111,15 +128,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "welcome:serve"
+            "devServerTarget": "customer-employee-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "welcome:serve:production"
+              "devServerTarget": "customer-employee-app:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "welcome"
+    }
+  },
+  "defaultProject": "customer-employee-app",
+  "cli": {
+    "analytics": false
+  }
 }

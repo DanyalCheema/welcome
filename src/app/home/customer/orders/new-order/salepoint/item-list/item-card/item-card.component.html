@@ -1,0 +1,12 @@
+<mat-card class="item-card">
+  <img mat-card-image src="/assets/img/img_avatar1.png" alt="Product Photo">
+  <mat-card-content>
+    <mat-card-title>itme.name</mat-card-title>
+    <h3>itme.name</h3>
+    <hr />
+    <mat-card-title>Rs {{ item.itemPrice }} / {{item.unit}}</mat-card-title>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" [routerLink]="['/orders/new']" routerLinkActive="router-link-active">Add to Cart</button>
+  </mat-card-actions>
+</mat-card>

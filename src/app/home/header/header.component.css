@@ -1,0 +1,44 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+div ul {
+  margin: 0px;
+}
+
+div ul li {
+  list-style: none;
+}
+
+div ul li button {
+  padding: 0px;
+}
+
+div ul li button p {
+  margin: 0px;
+  line-height: 0px;
+}
+
+div ul li button .badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  font-size: 12px;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 3px 5px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+}
+
+div ul li button .bg-red-500 {
+  background-color: #f44336 !important;
+}
+/*# sourceMappingURL=header.component.css.map */
